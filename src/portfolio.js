@@ -197,7 +197,7 @@ const resumeSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle: "My Inbox is open for all.",
-  email_address: "contact@gmail.com"
+  email_address: "omgupta564@gmail.com"
 };
 
 // Twitter Section
