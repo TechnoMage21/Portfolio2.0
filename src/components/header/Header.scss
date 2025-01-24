@@ -1,11 +1,11 @@
 @import "../../_globalColor";
 
-/*React-headroom*/
+/* React-headroom */
 .headroom-wrapper {
   max-height: 100px;
 }
 
-/* header */
+/* Header Styles */
 
 .dark-menu {
   background-color: $darkBackground !important;
@@ -14,10 +14,12 @@
 
 .dark-menu li a {
   color: $textColorDark !important;
+  transition: background-color 0.3s ease; // Smooth transition for hover
 }
 
 .dark-menu li a:hover {
   background-color: $buttonColor !important;
+  transition: background-color 0.3s ease; // Smooth transition on hover
 }
 
 .header {
@@ -25,6 +27,10 @@
   max-width: 100%;
   padding: 15px 20px;
   margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  // Optional: Adds a shadow for the header
 }
 
 .header ul {
@@ -43,6 +49,7 @@
   padding: 15px 20px;
   color: $textColor;
   text-decoration: none;
+  transition: background-color 0.3s ease; // Smooth background color transition on hover
 }
 
 .header li a:hover,
@@ -52,31 +59,26 @@
 
 .header .logo {
   display: block;
-  flex: none;
-  float: left;
   font-size: 1.5em;
   text-decoration: none;
-  margin-top: 10px;
   line-height: normal;
+  color: $textColor; // Ensure color consistency for logo
 }
 
 .header .logo-name {
   font-family: "Agustina Regular";
   font-weight: bold;
   font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
   padding: 0 10px;
 }
 
-/* menu */
+/* Menu Styles */
 
 .header .menu {
   clear: both;
   max-height: 0;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.3s ease-out;  // Improved transition for mobile menu
 }
-
-/* menu icon */
 
 .header .menu-icon {
   cursor: pointer;
@@ -107,19 +109,13 @@
   display: block;
   height: 100%;
   position: absolute;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
   width: 100%;
 }
 
 .header .menu-icon .navicon-dark:before,
 .header .menu-icon .navicon-dark:after {
   background: $textColorDark !important;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
 }
 
 .header .menu-icon .navicon:before {
@@ -130,14 +126,14 @@
   top: -5px;
 }
 
-/* menu btn */
+/* Menu Button: Mobile Responsiveness */
 
 .header .menu-btn {
   display: none;
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+  max-height: 486px;  // Adjust this value if needed for your menu size
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -157,26 +153,54 @@
   top: 0;
 }
 
-/* 48em = 768px */
+/* Media Queries for Responsiveness */
 
 @media (min-width: 48em) {
   .header li {
     float: left;
   }
+
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .header .menu {
     max-height: none;
   }
+
   .header .menu-icon {
     display: none;
   }
 }
+
 @media (max-width: 960px) and (min-width: 768px) {
   .header {
     font-size: 12px;
+  }
+}
+
+/* Improved Mobile Menu: Ensure smooth transitions */
+@media (max-width: 768px) {
+  .header {
+    font-size: 16px;  // Larger font size for readability on small screens
+  }
+
+  .header .menu {
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    max-height: 1000px;  // Adjust this based on the menu height
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
   }
 }

@@ -36,27 +36,29 @@
   .achievement-heading {
     font-size: 40px; // Decreased font size for better scaling
     line-height: 1.4; // Adjust line height for better spacing on smaller screens
+    text-align: center; // Center text for medium-sized screens
   }
 
   .achievement-subtitle {
     font-size: 16px; // Reduced subtitle size
-    text-align: center; // Center text for smaller screen sizes
+    text-align: center; // Center text for medium-sized screens
+    margin-bottom: 30px; // Adjusted bottom margin to prevent excessive white space
+    letter-spacing: 1px; // Reduced letter spacing for medium devices
   }
 }
 
 /* For small screens (Mobile Devices) */
 @media (max-width: 768px) {
   .achievement-heading {
-    font-size: 30px;
+    font-size: 30px; // Adjusted font size for mobile
     text-align: center; // Ensures heading is centered on smaller screens
     line-height: 1.5; // Increased line-height for more comfortable spacing
   }
 
   .achievement-subtitle {
     font-size: 14px; // Reduced subtitle size for mobile screens
-    text-align: center; // Center subtitle for small screens
-    margin-bottom: 30px; // Adjusted bottom margin to prevent excessive white space
+    text-align: center; // Center subtitle for mobile screens
+    margin-bottom: 20px; // Adjusted bottom margin to prevent excessive white space
     letter-spacing: 1px; // Reduced letter spacing for mobile devices
   }
 }
-

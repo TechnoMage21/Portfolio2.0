@@ -2,32 +2,42 @@
 
 .social-media-div {
   font-size: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* This adds spacing between icons */
 }
 
 .icon-button {
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 .icon-button i {
   color: $textColorDark;
-  border-radius: 2.6rem;
+  border-radius: 50%; /* Simplified to 50% for a perfect circle */
   cursor: pointer;
-  display: inline-block;
   font-size: 1.3rem;
   height: 2.6rem;
   line-height: 2.6rem;
   margin: 0 5px;
   position: relative;
   text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   width: 2.6rem;
-  margin-bottom: 10px;
-  transition: 0.2s ease-in;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
 }
 
+.icon-button i:hover,
+.icon-button i:focus,
+.icon-button i:active {
+  background-color: $textColor;
+  transform: scale(1.1); /* Slight scale-up effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
+}
+
+/* Social Media Colors */
 .facebook i {
   background-color: $faceBook;
 }
@@ -68,23 +78,14 @@
   background-color: $instagram;
 }
 
-/* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
-  background-color: $textColor;
-}
-
-/* Media Query */
+/* Media Query - For Mobile Devices */
 @media (max-width: 768px) {
   .social-media-div {
+    font-size: 1.5em; /* Adjust the size on smaller screens */
     text-align: center;
+  }
+
+  .icon-button {
+    margin-bottom: 15px; /* More spacing between icons on mobile */
   }
 }

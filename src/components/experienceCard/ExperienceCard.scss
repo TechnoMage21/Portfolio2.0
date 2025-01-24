@@ -6,6 +6,12 @@
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   border-radius: 10px;
   border: 1px solid $lightBorder1;
+  transition: box-shadow 0.3s ease, transform 0.3s ease-in-out; // Added smooth transitions for hover effects
+
+  &:hover {
+    box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+    transform: translateY(-5px); // Slight upward movement on hover for interactivity
+  }
 }
 
 .experience-card-dark {
@@ -14,42 +20,46 @@
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   border-radius: 10px;
   border: 1px solid $lightBorder1;
-}
+  transition: box-shadow 0.3s ease, transform 0.3s ease-in-out; // Added smooth transitions for hover effects
 
-.experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  &:hover {
+    box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+    transform: translateY(-5px); // Slight upward movement on hover for interactivity
+  }
 }
 
 .experience-banner {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: cover; // Ensure it scales to fit the banner area
   background: $experienceCardBannerLG;
   border-radius: 10px 10px 0px 0px;
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
+  filter: blur(5px); // Default blur for background
   height: 11rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  transition: filter 0.3s ease; // Smooth transition for blur effect
+}
+
+.experience-card:hover .experience-banner {
+  filter: blur(0px); // Clear blur on hover for focus effect
 }
 
 .experience-blurred_div {
   position: absolute;
   background: $experienceCardBlurredDivLG;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: blur(5px); // Default blur for background
   height: 11rem;
   top: 0;
   left: 0;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
+  transition: filter 0.3s ease; // Smooth transition for blur effect
+}
+
+.experience-card:hover .experience-blurred_div {
+  filter: blur(0px); // Clear blur effect on hover
 }
 
 .experience-div-company {
@@ -70,7 +80,6 @@
   margin: 0;
   color: $lightBackground1;
   font-size: 25px;
-  text-align: center;
   font-weight: 700;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -89,6 +98,12 @@
   height: 8rem;
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
   border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-roundedimg:hover {
+  transform: scale(1.05); // Slight zoom effect on hover for interactivity
+  box-shadow: 0 1rem 2rem $lightBoxShadowDarker; // Enhanced shadow on hover
 }
 
 .experience-text-role {
@@ -100,9 +115,11 @@
   padding-top: 1.5rem;
   line-height: normal;
 }
+
 .dark-mode-text {
   color: $textColorDark !important;
 }
+
 .experience-text-date {
   text-align: center;
   color: $textColor;
@@ -121,8 +138,7 @@
   margin-top: 2rem;
 }
 
-/* Media Query */
-
+/* Media Queries */
 @media (max-width: 1380px) {
   .experience-text-role {
     padding-top: 0.5rem;
@@ -152,5 +168,14 @@
   }
   .experience-text-desc {
     font-size: 16px;
+  }
+
+  .experience-banner {
+    height: 8rem; // Adjusted for smaller screen sizes
+  }
+
+  .experience-roundedimg {
+    width: 6rem;
+    height: 6rem; // Adjusted for smaller screen sizes
   }
 }

@@ -2,6 +2,7 @@
 
 .contact-div-main {
   display: flex;
+  flex-direction: row; // Ensure flex direction stays in row on larger screens
 }
 
 .dark-mode a {
@@ -52,17 +53,13 @@
   margin-top: -4rem;
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
+/* Media Queries */
+
+/* For medium and large screens (max-width 1380px) */
+@media (max-width: 1380px) {
   .contact-title {
     font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
+    text-align: center; // Center the title on medium screens
   }
 
   .contact-subtitle {
@@ -78,10 +75,38 @@
 
   .contact-detail,
   .contact-detail-email {
-    font-size: 20px;
+    font-size: 22px; // Slightly smaller font for medium screens
   }
 
   .contact-image-div {
-    display: none;
+    display: none; // Hide image on medium screens
+  }
+}
+
+/* For smaller screens (max-width 768px) */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 40px;
+    text-align: center; // Center the title on smaller screens
+  }
+
+  .contact-subtitle {
+    font-size: 14px; // Further reduce the subtitle size for mobile
+    text-align: center;
+    line-height: normal;
+  }
+
+  .contact-text-div {
+    text-align: center;
+    margin-top: 1rem; // Reduced top margin for small screens
+  }
+
+  .contact-detail,
+  .contact-detail-email {
+    font-size: 18px; // Smaller font size for mobile contact details
+  }
+
+  .contact-image-div {
+    display: none; // Hide image completely on small screens
   }
 }

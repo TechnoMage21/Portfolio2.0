@@ -10,22 +10,44 @@
 }
 
 .software-skill-inline {
-  display: inline-block;
+  display: inline-flex; /* Changed to inline-flex for better vertical alignment */
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center; /* Center align both icon and text */
   margin-right: 20px;
   margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out; /* Added subtle transition effect */
 }
 
 .software-skill-inline > i {
   color: $subTitle;
+  transition: color 0.3s ease-in-out; /* Smooth color change */
 }
 
 .software-skill-inline > i:hover {
   color: $skillsColor;
+  transform: scale(1.2); /* Slight zoom effect for the icon */
 }
+
 .software-skill-inline > p {
   color: $subTitle;
   font-size: 10px;
+  transition: color 0.3s ease-in-out; /* Smooth color change for text */
 }
+
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;
+}
+
+@media (max-width: 768px) {
+  .dev-icons {
+    font-size: 2.5rem; /* Adjust size for smaller screens */
+  }
+  
+  .software-skill-inline > p {
+    font-size: 12px; /* Slightly larger text on mobile */
+  }
+
+  .software-skill-inline {
+    margin-right: 10px; /* Reduce margin for mobile responsiveness */
+  }
 }
