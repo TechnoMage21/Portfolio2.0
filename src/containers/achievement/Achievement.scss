@@ -3,32 +3,60 @@
 .achievement-heading {
   font-size: 56px;
   font-weight: 400;
-  line-height: normal;
-  margin: 0px;
+  line-height: 1.2; // Improved line-height for better readability
+  margin: 0;
+  color: $titleColor; // Ensures heading color consistency
+  text-align: left; // Default alignment for large screens
+
+  // Added transition for smooth font resizing
+  transition: font-size 0.3s ease-in-out, line-height 0.3s ease-in-out;
 }
+
 .achievement-subtitle {
   text-transform: uppercase;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 50px;
+  font-size: 18px; // Default size for subtitle
+  color: $subTitle; // Ensures subtitle color consistency
+  text-align: left; // Default alignment for large screens
+  letter-spacing: 2px; // Adds spacing for better readability of uppercase text
+
+  // Transition for smooth font resizing
+  transition: font-size 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
 }
+
 .subTitle {
   color: $subTitle;
 }
 
-/* Media Query */
+/* Media Queries */
+
+/* For medium screens (Tablets & small desktops) */
 @media (max-width: 1380px) {
   .achievement-heading {
-    font-size: 40px;
+    font-size: 40px; // Decreased font size for better scaling
+    line-height: 1.4; // Adjust line height for better spacing on smaller screens
+  }
+
+  .achievement-subtitle {
+    font-size: 16px; // Reduced subtitle size
+    text-align: center; // Center text for smaller screen sizes
   }
 }
+
+/* For small screens (Mobile Devices) */
 @media (max-width: 768px) {
   .achievement-heading {
     font-size: 30px;
-    text-align: center;
+    text-align: center; // Ensures heading is centered on smaller screens
+    line-height: 1.5; // Increased line-height for more comfortable spacing
   }
+
   .achievement-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
+    font-size: 14px; // Reduced subtitle size for mobile screens
+    text-align: center; // Center subtitle for small screens
+    margin-bottom: 30px; // Adjusted bottom margin to prevent excessive white space
+    letter-spacing: 1px; // Reduced letter spacing for mobile devices
   }
 }
+

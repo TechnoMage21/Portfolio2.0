@@ -1,5 +1,14 @@
 @import "./globalColor";
 
+// Global resets for margin and padding to avoid unexpected behavior
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   width: 100%;
@@ -8,6 +17,12 @@
 
 .App-logo {
   height: 40vmin;
+  transition: transform 0.3s ease-in-out;
+  
+  // Scale the logo on hover for a subtle animation effect
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .App-header {
@@ -17,14 +32,129 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
+  font-size: calc(0.875rem + 2vmin); // Adjusted font size for better readability
   color: $textColorDark;
+  padding: 2rem; // Added padding for spacing around the content
+
+  // Add a soft shadow for better separation of content
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  // Responsive design
+  @media (max-width: 768px) {
+    font-size: calc(0.75rem + 2vmin);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.625rem + 2vmin);
+    padding: 1rem;
+  }
 }
 
 .App-link {
   color: $appLink;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+
+  // Adding hover effect for better interactivity
+  &:hover {
+    color: darken($appLink, 15%);
+  }
+
+  // Responsive link size
+  font-size: 1.125rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .subTitle {
   color: $subTitle;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
+
+@import "./globalColor";
+
+// Global resets for margin and padding to avoid unexpected behavior
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  transition: transform 0.3s ease-in-out;
+  
+  // Scale the logo on hover for a subtle animation effect
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.App-header {
+  background-color: $appHeaderBG;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.875rem + 2vmin); // Adjusted font size for better readability
+  color: $textColorDark;
+  padding: 2rem; // Added padding for spacing around the content
+
+  // Add a soft shadow for better separation of content
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  // Responsive design
+  @media (max-width: 768px) {
+    font-size: calc(0.75rem + 2vmin);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.625rem + 2vmin);
+    padding: 1rem;
+  }
+}
+
+.App-link {
+  color: $appLink;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+
+  // Adding hover effect for better interactivity
+  &:hover {
+    color: darken($appLink, 15%);
+  }
+
+  // Responsive link size
+  font-size: 1.125rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.subTitle {
+  color: $subTitle;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
